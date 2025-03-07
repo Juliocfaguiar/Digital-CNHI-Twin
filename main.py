@@ -4,7 +4,10 @@ import about, dataProfile, home, realtimedemo, staticpredictionForDay, staticpre
 from comum import config
 
 config()
-st.set_option('server.maxUploadSize', 1000)  # Aumentar o tamanho máximo de upload para 1000 MB
+
+# Definir o tamanho máximo de upload diretamente no código
+st.set_page_config(page_title="Digital CNHI Twin", layout="wide")
+st.write(f"<style>div[data-testid='stFileUploadDropzone'] {{ max-width: 1000MB; }}</style>", unsafe_allow_html=True)
 
 class Multiapp:
     
