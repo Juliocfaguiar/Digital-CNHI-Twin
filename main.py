@@ -7,7 +7,7 @@ config()
 
 # Definir o tamanho máximo de upload diretamente no código
 st.set_page_config(page_title="Digital CNHI Twin", layout="wide")
-st.write(f"<style>div[data-testid='stFileUploadDropzone'] {{ max-width: 1000MB; }}</style>", unsafe_allow_html=True)
+# st.write(f"<style>div[data-testid='stFileUploadDropzone'] {{ max-width: 1000MB; }}</style>", unsafe_allow_html=True)
 
 class Multiapp:
     
