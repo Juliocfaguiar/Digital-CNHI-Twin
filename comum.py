@@ -12,6 +12,7 @@ import plotly.express as px
 
 def config():
     st.set_page_config(page_title="Digital-Twin",layout="wide")
+    st.set_option('server.maxUploadSize', 500)
 
 # columns =  ['BaseCutRPM','ChopperRPM','EngRPM','EngLoad','ChopperHydPrs','BaseCutHght','BaseCutPrs','BHF','GndSpd','HydrostatChrgPrs','A2000_ChopperHydOilPrsHi']
 columns =  ['DateTime [-]','BaseCutRPM','ChopperRPM','EngRPM','EngLoad','ChopperHydPrs','BaseCutHght','BaseCutPrs','BHF','GndSpd','HydrostatChrgPrs','A2000_ChopperHydOilPrsHi']
