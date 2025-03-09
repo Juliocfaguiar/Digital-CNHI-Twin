@@ -80,7 +80,7 @@ def show_predict_page2():
     col3, col4 = st.columns(gap='large', spec=[1,1])        
 
     with col3:
-        st.image("CNHI_variaveis_numeros.png")
+        st.image("CNHI_variaveis_tabela.png")
 
     with col4:
         imagensList = listar_arquivos(caminho_extraido)

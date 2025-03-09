@@ -58,6 +58,8 @@ def app():
             except Exception as e:
                 # st.error(f"Erro ao carregar o CSV: {e}")
                 return
+            
+    
 
 
 
@@ -116,5 +118,4 @@ def app():
         chart_right.write(make_chart(df_tmp, select_saida, ymin_saida, ymax_saida))
 
         time.sleep(0.8)  # ⏳ Reduzindo o tempo de espera para tornar mais fluido
-
 
