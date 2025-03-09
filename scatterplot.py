@@ -1,12 +1,12 @@
 import streamlit as st
 import pandas as pd
-from comum import  carregar_arquivo ,criar_graficos,dropna
+from comum import  carregar_arquivo ,criar_graficos
 
 
 
 def app():
     df = carregar_arquivo()  # Certifique-se de que o arquivo foi carregado antes de chamar a função
-    dropna(df)
+    
     
     if df is not None:
         # Verificar se a coluna 'BaseCutRPM' contém apenas valores escalares
