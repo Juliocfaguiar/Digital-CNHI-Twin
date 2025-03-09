@@ -53,13 +53,13 @@ def show_predict_page1():
                 # 🛠 Verificar se o CSV pode ser carregado
         try:
             dFrame = pd.read_csv(caminhoArquivo, sep=';')
-            st.success(f"Arquivo carregado: {csv_files[0]}")
+            # st.success(f"Arquivo carregado: {csv_files[0]}")
         except Exception as e:
-            st.error(f"Erro ao carregar o CSV: {e}")
+            # st.error(f"Erro ao carregar o CSV: {e}")
             return
         # 🛠 Verificar se a coluna "dateDir" existe antes de continuar
         if "dateDir" not in dFrame.columns:
-            st.error("A coluna 'dateDir' não foi encontrada no CSV!")
+            # st.error("A coluna 'dateDir' não foi encontrada no CSV!")
             return
 
         # Corrigir formato da coluna "dateDir"
@@ -67,7 +67,7 @@ def show_predict_page1():
         datas_unicas = dFrame["dateDir"].dropna().unique().tolist()
 
         if not datas_unicas:
-            st.warning("Nenhuma data válida encontrada no CSV.")
+            # st.warning("Nenhuma data válida encontrada no CSV.")
             return
 
         # Selectbox para escolher a data
@@ -85,7 +85,7 @@ def show_predict_page1():
         
 
         if len (jpeg_files) == 0:
-            st.warning("Nenhuma imagem encontrada na pasta extraída.")
+            # st.warning("Nenhuma imagem encontrada na pasta extraída.")
             return
         # Ajuste para encontrar a imagem correta com base na data selecionada
         imagem_correspondente = next(( img for img in jpeg_files if data_selecionada in img), None)

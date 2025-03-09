@@ -36,7 +36,7 @@ def show_predict_page2():
             csv_files = [f for f in csvLista if f.endswith(".csv")]
 
             if not csv_files:
-                st.error("Nenhum arquivo CSV encontrado no ZIP!")
+                # st.error("Nenhum arquivo CSV encontrado no ZIP!")
                 return
             
             caminhoArquivo = csv_files[0]
@@ -44,13 +44,13 @@ def show_predict_page2():
     with col2:
         try:
             dFrame = pd.read_csv(caminhoArquivo, sep=';')
-            st.success(f"Arquivo carregado: {csv_files[0]}")
+            # st.success(f"Arquivo carregado: {csv_files[0]}")
         except Exception as e:
-            st.error(f"Erro ao carregar o CSV: {e}")
+            # st.error(f"Erro ao carregar o CSV: {e}")
             return
 
         if "dateDir" not in dFrame.columns:
-            st.error("A coluna 'dateDir' não foi encontrada no CSV!")
+            # st.error("A coluna 'dateDir' não foi encontrada no CSV!")
             return
 
         dFrame["dateDir"] = pd.to_datetime(dFrame["dateDir"], errors='coerce')
@@ -60,7 +60,7 @@ def show_predict_page2():
         datas_unicas = sorted(dFrame["Data"].dropna().unique().tolist())
 
         if not datas_unicas:
-            st.warning("Nenhuma data válida encontrada no CSV.")
+            # st.warning("Nenhuma data válida encontrada no CSV.")
             return
 
         data_selecionada = st.selectbox("Selecione a data", datas_unicas)
@@ -108,7 +108,8 @@ def show_predict_page2():
             else:
                 st.warning(f"Imagem {statisticsImg[0]} não encontrada no diretório esperado.")
         else:
-            st.warning("Nenhuma imagem estatística encontrada.")
+            pass
+            # st.warning("Nenhuma imagem estatística encontrada.")
 
     with col6:
         pass
