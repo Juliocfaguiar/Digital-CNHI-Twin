@@ -23,3 +23,5 @@ streamlit-vertical-slider==2.5.5
 ydata-profiling==4.12.2
 scikit-learn==1.6.1
 patool==4.0.0
+oauthlib==3.2.2
+psutil==5.9.5
