@@ -62,6 +62,17 @@ def renameVar(df):
     df.rename(columns={"imptChopperHydPrs" : "ChopperHydPrs"}, inplace= True)
     df.rename(columns={"imptChopperRPM" : "ChopperRPM"}, inplace= True)
     df.rename(columns={"imptHydrostatChrgPrs": "HydrostatChrgPrs"}, inplace= True)
+    
+    df.rename(columns={"imptAboveEngLoadPercent": "EngLoad_%"}, inplace= True)
+    df.rename(columns={"imptAboveEngRPMPercent": "EngRPM_%"}, inplace= True)
+    df.rename(columns={"imptAboveGndSpdPercent": "GndSpd_%"}, inplace= True)
+    df.rename(columns={"imptAboveBaseCutPrsPercent": "BaseCutPrs_%"}, inplace= True)
+    df.rename(columns={"imptAboveBaseCutHghtPercent": "BaseCutHght_%"}, inplace= True)
+    df.rename(columns={"imptAboveChopperHydPrsPercent": "ChopperHyd_%"}, inplace= True)
+    df.rename(columns={"imptAboveChopperRPMPercent": "AboveChopperRPM_%"}, inplace= True)
+    df.rename(columns={"imptAboveHydrostatChrgPrsPercent": "HydrostatChrgPrs_%"}, inplace= True)
+
+abovePercent = ['EngLoad_%','EngRPM_%','GndSpd_%','BaseCutPrs_%','BaseCutHght_%','ChopperHyd_%','AboveChopperRPM_%','HydrostatChrgPrs_%']
 
 
 def dropna(df):
