@@ -101,9 +101,11 @@ def show_predict_page1():
     with col5:
         statisticsImg = [img for img in jpeg_files if "statistics" in img.lower()]
         statisticsImg1 = statisticsImg[0]
-        statisticsImg2 = statisticsImg[1]
+        if len(statisticsImg) > 1:
+            statisticsImg2 = statisticsImg[1]
         st.image(statisticsImg1)
         
     with col6:
-        st.image(statisticsImg2)
+        if statisticsImg2 is not None:
+            st.image(statisticsImg2)
 
