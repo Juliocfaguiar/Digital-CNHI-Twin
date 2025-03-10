@@ -100,16 +100,12 @@ def show_predict_page2():
     col5, col6 = st.columns(gap='large', spec=[1,1])        
 
     with col5:
-        statisticsImg = [img for img in jpeg_files if "statistics_" in img.lower()]
-        if statisticsImg:
-            caminho_imagem = os.path.join(caminho_extraido, statisticsImg[0])
-            if os.path.exists(caminho_imagem):
-                st.image(caminho_imagem, caption="Imagem Estatística", use_container_width=True)
-            else:
-                st.warning(f"Imagem {statisticsImg[0]} não encontrada no diretório esperado.")
-        else:
-            pass
-            # st.warning("Nenhuma imagem estatística encontrada.")
-
+        statisticsImg = [img for img in jpeg_files if "statistics" in img.lower()]
+        statisticsImg1 = statisticsImg[0]
+        if len(statisticsImg) > 1:
+            statisticsImg2 = statisticsImg[1]
+        st.image(statisticsImg1)
+        
     with col6:
-        pass
+        if statisticsImg2 is not None:
+            st.image(statisticsImg2)
