@@ -134,4 +134,5 @@ def app():
         chart_downleft.write(make_chart(df_tmp, select_downleft, ymin_saida02, ymax_saida02))
         chart_downright.write(make_chart(df_tmp, select_downright, ymin_media, ymax_media))
 
+
         time.sleep(0.8)  # ⏳ Reduzindo o tempo de espera para tornar mais fluido
