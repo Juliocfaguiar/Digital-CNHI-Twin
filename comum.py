@@ -79,14 +79,14 @@ def renameVar(df):
     df.rename(columns={"imptAboveHydrostatChrgPrsPercent": "HydrostatChrgPrs_Above_%"}, inplace= True)
 
 
-    df.rename(columns={"imptEngLoadPercent_media": "EngLoad_media"}, inplace= True)
-    df.rename(columns={"imptEngRPMPercent_media": "EngRPM_media"}, inplace= True)
-    df.rename(columns={"imptGndSpdPercent_media": "GndSped_media"}, inplace= True)
-    df.rename(columns={"imptBaseCutPrsPercent_media" : "BaseCutPrs_media"}, inplace= True)
-    df.rename(columns={"imptBaseCutHghtPercent_media" : "BaseCutHght_media"}, inplace= True)    
-    df.rename(columns={"imptChopperHydPrsPercent_media" : "ChopperHydPrs_media"}, inplace= True)
-    df.rename(columns={"imptChopperRPMPercent_media" : "ChopperRPM_media"}, inplace= True)
-    df.rename(columns={"imptHydrostatChrgPrsPercent_media": "HydrostatChrgPrs_media"}, inplace= True)
+    df.rename(columns={"imptEngLoad_media": "EngLoad_media"}, inplace= True)
+    df.rename(columns={"imptEngRPM_media": "EngRPM_media"}, inplace= True)
+    df.rename(columns={"imptGndSpd_media": "GndSped_media"}, inplace= True)
+    df.rename(columns={"imptBaseCutPrs_media" : "BaseCutPrs_media"}, inplace= True)
+    df.rename(columns={"imptBaseCutHght_media" : "BaseCutHght_media"}, inplace= True)    
+    df.rename(columns={"imptChopperHydPrs_media" : "ChopperHydPrs_media"}, inplace= True)
+    df.rename(columns={"imptChopperRPM_media" : "ChopperRPM_media"}, inplace= True)
+    df.rename(columns={"imptHydrostatChrgPrs_media": "HydrostatChrgPrs_media"}, inplace= True)
 
 
 
@@ -275,7 +275,14 @@ def criar_graficos(df):
 
 def convertTypes(df):
     colunas_para_converter = ['EngLoad_RC_All_%','EngRPM_RC_All_%','GndSped_RC_All_%',
-                              'BaseCutPrs_RC_All_%','BaseCutHght_RC_All_%','ChopperHydPrs_RC_All_%','ChopperRPM_RC_All_%','HydrostatChrgPrs_RC_All_%',                              'EngLoad_Above_%','EngRPM_Above_%','GndSpd_Above_%','BaseCutPrs_Above_%','BaseCutHght_%','ChopperHyd_Above_%','AboveChopperRPM_Above_%','HydrostatChrgPrs_Above_%','anomalies','totalReg']
+                              'BaseCutPrs_RC_All_%','BaseCutHght_RC_All_%','ChopperHydPrs_RC_All_%','ChopperRPM_RC_All_%','HydrostatChrgPrs_RC_All_%',
+                                
+                                'EngLoad_Above_%','EngRPM_Above_%','GndSpd_Above_%','BaseCutPrs_Above_%','BaseCutHght_%','ChopperHyd_Above_%','AboveChopperRPM_Above_%','HydrostatChrgPrs_Above_%','anomalies','totalReg',
+
+                              'EngLoad_media','EngRPM_media','GndSped_media','BaseCutPrs_media','BaseCutHght_media','ChopperHydPrs_media','ChopperRPM_media','HydrostatChrgPrs_media'                       
+                                                                                    
+                                                            
+                              ]
 
     for col in colunas_para_converter:
         if col in df.columns:
