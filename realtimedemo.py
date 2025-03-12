@@ -62,6 +62,11 @@ def app():
             
     
     # §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ # 
+    entrada = [f'{col}' for col in df.columns if '_RC_All_%' in col]
+    saida01 = [f'{col}' for col in df.columns if '_Above_%' in col]
+    saida02 = [f'{col}' for col in df.columns if '_media' in col]
+    media = [f'{col}' for col in df.columns if 'mediaReg' in col]
+    # §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ # 
 
 
     # # Criando duas colunas para seleção de parâmetros
@@ -70,14 +75,11 @@ def app():
     # # Configuração da coluna esquerda - Parâmetros de entrada do reator
     with col03:
     
-        st.markdown("<h4 style='text-align: justify; color: black;'> Variaveis de Saída </h1>", unsafe_allow_html=True)
-        entrada = ['EngLoad_RC_All_%','EngRPM_RC_All_%','GndSped_RC_All_%','BaseCutPrs_RC_All_%','BaseCutHght_RC_All_%','ChopperHydPrs_RC_All_%','ChopperRPM_RC_All_%','HydrostatChrgPrs_RC_All_%']
+        st.markdown("<h4 style='text-align: center; color: black;'> Variaveis de Entrada </h1>", unsafe_allow_html=True)
         select_upleft = st.selectbox('', entrada)
 
-
     with col04:
-        st.markdown("<h4 style='text-align: justify; color: black;'> Variáveis de saída</h1>", unsafe_allow_html=True)
-        saida01 = ['EngLoad_Above_%','EngRPM_Above_%','GndSpd_Above_%','BaseCutPrs_Above_%','BaseCutHght_%','ChopperHyd_Above_%','AboveChopperRPM_Above_%','HydrostatChrgPrs_Above_%']         
+        st.markdown("<h4 style='text-align: center; color: black;'> Variáveis de saída </h1>", unsafe_allow_html=True)       
         select_upright = st.selectbox('', saida01)
         
     n = len(df)  # Número total de linhas do DataFrame
@@ -99,19 +101,16 @@ def app():
         
     col05, col06 = st.columns(spec=[1, 1])
     with col05:
-        st.markdown("<h4 style='text-align: justify; color: black;'> Variáveis de saída</h1>", unsafe_allow_html=True)
         chart_upleft = col05.empty()
         chart_upright = col06.empty()
 
     col07, col08 = st.columns(spec=[1, 1])
     with col07:
-        st.markdown("<h4 style='text-align: justify; color: black;'> Porcentagem de Anomalia por Dia </h1>", unsafe_allow_html=True)
-        saida02 = ['mediaReg']
+        st.markdown("<h4 style='text-align: center; color: black;'> Variáveis de Saída </h1>", unsafe_allow_html=True)
         select_downleft = st.selectbox('', saida02)
 
     with col08:
-        st.markdown("<h4 style='text-align: justify; color: black;'> Porcentagem de Anomalia por Dia </h1>", unsafe_allow_html=True)
-        media = ['anomalies', 'notAanomalie']
+        st.markdown("<h4 style='text-align: center; color: black;'> Media de Anomalia por Dia </h1>", unsafe_allow_html=True)
         select_downright = st.selectbox('', media)
 
     col09, col10 = st.columns(spec=[1, 1])
