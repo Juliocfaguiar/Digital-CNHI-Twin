@@ -76,11 +76,11 @@ def app():
     with col03:
     
         st.markdown("<h4 style='text-align: center; color: black;'> Variaveis de Entrada </h1>", unsafe_allow_html=True)
-        select_upleft = st.selectbox('', entrada)
+        select_upleft = st.selectbox('EngLoad_RC_All_%', entrada)
 
     with col04:
         st.markdown("<h4 style='text-align: center; color: black;'> Variáveis de saída </h1>", unsafe_allow_html=True)       
-        select_upright = st.selectbox('', saida01)
+        select_upright = st.selectbox('EngLoad_Above_%', saida01)
         
     n = len(df)  # Número total de linhas do DataFrame
 
@@ -111,7 +111,7 @@ def app():
 
     with col08:
         st.markdown("<h4 style='text-align: center; color: black;'> Media de Anomalia por Dia </h1>", unsafe_allow_html=True)
-        select_downright = st.selectbox('', media)
+        select_downright = st.selectbox('EngLoad_media', media)
 
     col09, col10 = st.columns(spec=[1, 1])
     with col09:
